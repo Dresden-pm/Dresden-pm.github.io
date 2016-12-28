@@ -3,92 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Dresden Perl Mongers by Dresden-pm</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <title>Dresden Perl Mongers by Dresden-pm</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/github-light.css">
+    <script type="text/javascript" src="/javascripts/MooTools-Core-1.6.0-compressed.js"></script>
+    <script type="text/javascript" src="/javascripts/MooTools-More-1.6.0-compressed.js"></script>
+    <script src="javascripts/showdown.js"></script>
+    <script type="text/javascript">
+        window.addEvent('domready', function() {
+            var sd = new Showdown.converter();
+            new Request({url:'header.md',onSuccess:function(r){$('header').set('html',sd.makeHtml(r))}}).send();
+            var p = new URI(window.location.toString()).getData('page');
+            new Request({url:(p||'index')+'.md',onSuccess:function(r){$('content').set('html',sd.makeHtml(r))}}).send();
+        });
+    </script>
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1>Dresden Perl Mongers</h1>
-        <p class="view"><a href="https://github.com/Dresden-pm"><img src="images/use_style2_sehrklein.png" alt="use style"/></a></p>
-      </header>
-      <section>
-        <h2>
-<a id="was-ist-dresdenpm" class="anchor" href="#was-ist-dresdenpm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Was ist Dresden.pm?</h2>
-
-<p>Dresden.pm sind Perl-Programmierer aus Dresden und gelegentlich Nachbarstädten.</p>
-
-<p>Dresden.pm wurde am 1. September 2002 ins Leben gerufen, um eine Plattform (vulgo: Stammtisch) für Spaß, Lernen und Gedankenaustausch zu sein. Weltweit gibt es Tausende Menschen, die sich in diesen Perl-Usergroups organisieren. Der Name, der alle miteinander verbindet, ist "Perl Mongers".</p>
-
-<h2>
-<a id="an-wen-wendet-sich-dresdenpm" class="anchor" href="#an-wen-wendet-sich-dresdenpm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>An wen wendet sich Dresden.pm?</h2>
-
-<p>An alle Perl-Programmierer oder solche, die es werden wollen oder Hilfe oder Anregung suchen in Dresden und Umgebung. </p>
-
-<h2>
-<a id="kann-man-bei-euch-mitmachen" class="anchor" href="#kann-man-bei-euch-mitmachen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Kann man bei Euch mitmachen?</h2>
-
-<p>Ja, klar. Es ist egal, ob du schon Perl programmiert hast, ob du Windows- oder Linux-Benutzer bist. Meldet euch in der Mailingliste an oder kommt einfach bei einem Treffen vorbei.</p>
-
-<h2>
-<a id="terminetreffen" class="anchor" href="#terminetreffen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Termine/Treffen</h2>
-
-<p>Wir treffen uns normalerweise jeden 1. Donnerstag im Monat, 2o.oo Uhr.</p>
-
-<p>Unbedingt die <a href="http://mail.pm.org/pipermail/dresden-pm/">Mailingliste</a> lese, falls sich was ändert. Auch Abweichungen (z.B. Feiertage) werden dort verkündet.</p>
-
-<h2>
-<a id="ort" class="anchor" href="#ort" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ort</h2>
-
-<ul>
-<li>Newtown Bar</li>
-<li>Helgolandstraße 9 b / Ecke Fritz- Reuter-Str.</li>
-<li>01097 Dresden</li>
-<li><a href="http://goo.gl/maps/jwyiv">http://goo.gl/maps/jwyiv</a></li>
-<li><a href="http://newtownbar.de">http://newtownbar.de</a></li>
-</ul>
-
-<h2>
-<a id="themen" class="anchor" href="#themen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Themen</h2>
-
-<p>Wir bieten ernsthaften Support rund um Perl-Einstiegsthemen wie</p>
-
-<ul>
-<li>Code-Reviews</li>
-<li> erstes CPAN-Modul bauen</li>
-<li> Parrot und Rakudo Perl6 compilieren</li>
-<li> Updates zu
-
-<ul>
-<li>Perl 5</li>
-<li>Perl 6</li>
-<li>Deutscher Perlworkshop</li>
-<li>YAPC::Europe </li>
-</ul>
-</li>
-</ul>
-
-<p>und für Fortgeschrittene</p>
-
-<ul>
-<li>Trost</li>
-<li>Traditionelle Folklore</li>
-<li>misc &amp; etc.</li>
-</ul>
-
-<p>Viel Spaß!</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+      <header id="header"></header>
+      <section id="content"></section>
+      <footer><p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p></footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
   </body>
 </html>
