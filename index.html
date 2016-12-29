@@ -5,26 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width">
     <title>Dresden Perl Mongers by Dresden-pm</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="stylesheet" href="/stylesheets/github-light.css">
-    <script type="text/javascript" src="/javascripts/MooTools-Core-1.6.0-compressed.js"></script>
-    <script type="text/javascript" src="/javascripts/MooTools-More-1.6.0-compressed.js"></script>
-    <script src="javascripts/showdown.js"></script>
-    <script type="text/javascript">
-        window.addEvent('domready', function() {
-            var sd = new Showdown.converter();
-            new Request({url:'header.md',onSuccess:function(r){$('header').set('html',sd.makeHtml(r))}}).send();
-            var p = new URI(window.location.toString()).getData('page');
-            new Request({url:(p||'index')+'.md',onSuccess:function(r){$('content').set('html',sd.makeHtml(r))}}).send();
-        });
-    </script>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
   </head>
   <body>
     <div class="wrapper">
       <header id="header"></header>
       <section id="content"></section>
-      <footer><p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p></footer>
+      <footer id="footer"></footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <script type="text/javascript" src="javascripts/MooTools-1.6.0.js"></script>
+    <script type="text/javascript" src="javascripts/showdown.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script type="text/javascript" src="javascripts/scale.fix.js"></script>
   </body>
 </html>
