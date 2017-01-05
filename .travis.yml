@@ -16,5 +16,5 @@ after_script:
   - git config --global user.email "someone@dresden.pm"
   - git config --global user.name "Dresden-pm master of html"
   - git commit -m 'automatic md to html conversion powered by travis-ci'
-  - GIT_SSH=./git_ssh_wrapper.sh git push origin master
-  - rm id_rsa_una
+  - GIT_SSH=../git_ssh_wrapper.sh git push origin master
+  - cd .. && rm id_rsa_una
