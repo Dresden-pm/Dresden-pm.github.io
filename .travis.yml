@@ -7,8 +7,12 @@ os:
 before_install:
   - git clone https://github.com/sonntagd/Dresden-pm.github.io.git repo
 script:
-  cd repo && perl ../converter/converter.pl && ls -la
+  cd repo && perl ../converter/converter.pl
 after_script:
   - git add .
-  - GIT_COMMITTER_NAME='Dresden-pm master of html' GIT_COMMITTER_EMAIL='someone@dresden.pm' git commit -m 'automatic md to html conversion powered by travis-ci'
-  - git push
+  - git config --global user.email "someone@dresden.pm"
+  - git config --global user.name "Dresden-pm master of html"
+  - git commit -m 'automatic md to html conversion powered by travis-ci'
+  - perl -MSereal::Encoder -MMIME::Base64 -MFile::Slurp -E 'write_file "id_rsa_una" => decode_sereal decode_base64($ARGV[0])' $GITHUBKEY
+  - GIT_SSH=./git_ssh_wrapper.sh git push origin master
+  - rm id_rsa_una
