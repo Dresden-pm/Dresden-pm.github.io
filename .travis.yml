@@ -12,7 +12,7 @@ before_install:
   - GIT_SSH=../git_ssh_wrapper.sh git clone git@github.com:Dresden-pm/Dresden-pm.github.io.git .
   - cd ..
 script:
-  cd repo && perl ../converter.pl markdown
+  cd repo && perl ../converter.pl markdown && mv markdown/*.html ..
 after_script:
   - git add *.html
   - git config --global user.email "someone@dresden.pm"
