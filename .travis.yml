@@ -14,7 +14,7 @@ before_install:
 script:
   cd repo && perl ../converter.pl markdown
 after_script:
-  - git add .
+  - git add *.html
   - git config --global user.email "someone@dresden.pm"
   - git config --global user.name "Dresden-pm master of html"
   - git commit -m 'automatic md to html conversion powered by travis-ci'
