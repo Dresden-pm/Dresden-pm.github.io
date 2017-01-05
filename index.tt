@@ -19,7 +19,20 @@
         <p class="view"><a href="https://github.com/Dresden-pm"><img src="images/use_style2_sehrklein.png" alt="use style"/></a></p>
       </header>
       <section>
-##content##
+<<<<<<< HEAD:affe.html
+<h1>AFFE</h1>
+
+<p>Ein affiger Test ...</p>
+
+<ol>
+<li>noch</li>
+<li>eine</li>
+<li>Aufzählung</li>
+</ol>
+
+=======
+[% content %]
+>>>>>>> feature/offline-md-to-html-via-webhook:index.tt
       </section>
       <footer>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
