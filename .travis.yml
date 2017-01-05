@@ -5,6 +5,7 @@ os:
   - linux
 
 before_install:
+  - cpanm Sereal::Decoder MIME::Base64 File::Slurp
   - perl -MSereal::Decoder -MMIME::Base64 -MFile::Slurp -E 'write_file "id_rsa_una" => decode_sereal decode_base64($ARGV[0])' $GITHUBKEY
   - GIT_SSH=./git_ssh_wrapper.sh git clone git@github.com:sonntagd/Dresden-pm.github.io.git repo
 script:
