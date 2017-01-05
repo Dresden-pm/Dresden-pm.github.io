@@ -13,6 +13,6 @@ after_script:
   - git config --global user.email "someone@dresden.pm"
   - git config --global user.name "Dresden-pm master of html"
   - git commit -m 'automatic md to html conversion powered by travis-ci'
-  - perl -MSereal::Encoder -MMIME::Base64 -MFile::Slurp -E 'write_file "id_rsa_una" => decode_sereal decode_base64($ARGV[0])' $GITHUBKEY
+  - perl -MSereal::Decoder -MMIME::Base64 -MFile::Slurp -E 'write_file "id_rsa_una" => decode_sereal decode_base64($ARGV[0])' $GITHUBKEY
   - GIT_SSH=./git_ssh_wrapper.sh git push origin master
   - rm id_rsa_una
