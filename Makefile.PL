@@ -11,6 +11,7 @@ WriteMakefile(
         'Text::Markdown'   => 0,
         'File::Slurp'      => 0,
         'File::Find::Rule' => 0,
+        'Sereal::Decoder'  => 0,
         'Sereal'           => 0,
         'MIME::Base64'     => 0,
     },
