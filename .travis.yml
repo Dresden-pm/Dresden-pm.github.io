@@ -10,6 +10,7 @@ before_install:
   - chmod 600 id_rsa_una
   - mkdir repo && cd repo
   - GIT_SSH=../git_ssh_wrapper.sh git clone git@github.com:sonntagd/Dresden-pm.github.io.git .
+  - cd ..
 script:
   cd repo && perl ../converter/converter.pl
 after_script:
