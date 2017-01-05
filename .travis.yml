@@ -8,5 +8,7 @@ before_install:
   - git clone https://github.com/sonntagd/Dresden-pm.github.io.git repo
 script:
   cd repo && perl ../converter/converter.pl && ls -la
-#after_script:
-#  git push
+after_script:
+  - git add .
+  - GIT_COMMITTER_NAME='Dresden-pm master of html' GIT_COMMITTER_EMAIL='someone@dresden.pm' git commit -m 'automatic md to html conversion powered by travis-ci'
+  - git push
