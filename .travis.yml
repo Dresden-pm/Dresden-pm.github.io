@@ -1,0 +1,15 @@
+language: perl
+perl:
+  - "5.20"
+os:
+  - linux
+
+before_install:
+  - cpanm Text::Markdown
+  - cpanm File::Slurp
+  - cpanm File::Find::Rule
+  - git clone https://github.com/sonntagd/Dresden-pm.github.io.git repo
+script:
+  cd repo && perl ../converter/converter.pl && ls -la
+#after_script:
+#  git push
