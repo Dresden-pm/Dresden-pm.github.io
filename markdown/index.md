@@ -41,7 +41,7 @@ Wir bieten ernsthaften Support rund um Perl-Einstiegsthemen wie
 
 und für Fortgeschrittene
 
-*   [/affe.html](Trost)
+*   [Trost](/affe.html)
 *   Traditionelle Folklore
 *   misc & etc.
 
