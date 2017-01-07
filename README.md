@@ -25,16 +25,46 @@ After pushing the changes to our Github repository, travis automatically starts 
 
 The build server must be able to push back to the Github repository. As we do not want anyone to be able to do that, we could not provide the Github deploy key in the repository itself. The solution is to save it in an environment variable setup by travis. These are private, so no one can extract the private key.
 
-As the environment variable only allows values without line breaks, we encoded the SSH private key file:
-
-### How to encode the SSH private key
+### 1. Create SSH key
 
 ```bash
-perl -MSereal::Encoder -MMIME::Base64 -MFile::Slurp -E 'say encode_base64 encode_sereal(scalar read_file "ìd_rsa_filename"), ""'
+ssh-keygen -t rsa -b 4096 -C "someone@dresden.pm" -f dresdenpm_id_rsa
 ```
+
+The passphrase must be left empty!
+
+### 2. Add public key to Github
+
+Go the Github repository settings -> Deploy keys and click "Add deploy key". Choose a meaningful title and paste the content of the file `dresdenpm_id_rsa.pub` into the key text field. Choose "Allow write access" and click "Add key".
+
+### 3. Add private key to Travis
+
+As the environment variable only allows values without line breaks, we encode the SSH private key file twice:
+
+```bash
+perl -MSereal::Encoder -MMIME::Base64 -MFile::Slurp -E 'say encode_base64 encode_sereal(scalar read_file "dresdenpm_id_rsa"), ""'
+```
+
+We wanted to avoid line breaks (thats why we used `Sereal`) and we wanted only sane characters (that's why we used `MIME::Base64`). There are probably better/easier ways, but this works well, too.
 
 Save the output of this script as environment variable `GITHUBKEY` in the Travis repository settings.
 
 # IMPLEMENTATION DETAILS
 
 We want Git to use a special private key for authenticating with Github. Therefor we saved this key as `id_rsa_una`. You can set the `GIT_SSH` environment variable when running `git` which tells which SSH client to use. Setting it to a shell script that adds some options to the `ssh` command allows us to provide the private key's file name.
+
+# IMPROVEMENT IDEAS
+
+## Separate repositories
+
+Source and output repositories could be separated, so the markdown, the converter script and the travis.yml would not live in the repository that contains the HTML files.
+
+The safest way would be three repositories:
+
+1. The source repository only containing the markdown files and the HTML template.
+2. The converter software.
+3. The output repository only containing the generated HTML.
+
+With this setup you could restrict access to the third repository only to the deploy key of the converter software. So the maintainers of the website source are not directly able to edit the converter workflow.
+
+The `.travis.yml` would only clone the converter repository and execute a shell script there that runs everything we currently define in the `.travis.yml` configuration file.
