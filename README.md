@@ -51,7 +51,19 @@ Save the output of this script as environment variable `GITHUBKEY` in the Travis
 
 # IMPLEMENTATION DETAILS
 
+## Tell Git which SSH key to use
+
 We want Git to use a special private key for authenticating with Github. Therefor we saved this key as `id_rsa_una`. You can set the `GIT_SSH` environment variable when running `git` which tells which SSH client to use. Setting it to a shell script that adds some options to the `ssh` command allows us to provide the private key's file name.
+
+## Two subsequent builds
+
+As the build process is always triggered after a new commit is pushed to the Github repository, it is also started after the converter has committed the new html files and pushed them. But as the second run does not result in any changes, it does not create a new commit. This way, we have no infinite loop.
+
+If you change the converter to allow more than a static conversion, you have to think about this again.
+
+## Integrated monitoring
+
+As travis is a continuous integration service, it will instantly send an email to you if a build fails. This way you can be nearly sure that problems in the build process will be signaled to you. Every command in the "script" section of the `.travis.yml` file must be executed successfully for the build to be marked as "passed". I added "true" before `git commit` because it also fails if no changes have been made (which is especially the case in the second build that get's triggered by the conversion).
 
 # IMPROVEMENT IDEAS
 
