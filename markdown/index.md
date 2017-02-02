@@ -18,7 +18,7 @@ Wir treffen uns normalerweise jeden 1\. Donnerstag im Monat, 2o.oo Uhr.
 
 Unbedingt die [Mailingliste](http://mail.pm.org/pipermail/dresden-pm/) lesen, falls sich was ändert. Auch Abweichungen (z.B. Feiertage) werden dort verkündet.
 
-Nächstes Treffen: **Donnerstag, 2. Februar 2017.**
+Aktuelles Treffen: **Donnerstag, 2. Februar 2017**
 
 ## [<span aria-hidden="true" class="octicon octicon-link"></span>](#ort)Ort
 
