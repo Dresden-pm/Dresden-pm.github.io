@@ -13,6 +13,7 @@ before_install:
   - cd ..
 script:
   - cd repo && perl ../converter.pl markdown
+  - git diff
   - git add *.html
   - git config --global user.email "someone@dresden.pm"
   - git config --global user.name "Dresden-pm master of html"
