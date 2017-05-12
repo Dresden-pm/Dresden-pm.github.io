@@ -17,7 +17,7 @@ script:
   - git add *.html -v
   - git config --global user.email "someone@dresden.pm"
   - git config --global user.name "Dresden-pm master of html"
-  - true git commit -m 'automatic md to html conversion powered by travis-ci' -v
+  - echo $(git commit -m 'automatic md to html conversion powered by travis-ci' -v)
   - GIT_SSH=../git_ssh_wrapper.sh git push origin master
 after_script:
   - cd .. && rm id_rsa_una
