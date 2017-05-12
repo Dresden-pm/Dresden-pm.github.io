@@ -16,8 +16,6 @@ Ja, klar. Es ist egal, ob du schon Perl programmiert hast, ob du Windows- oder L
 
 Wir treffen uns normalerweise jeden 1\. Donnerstag im Monat, 2o.oo Uhr.
 
-**Im Mai findet das Treffen ausnahmsweise eine Woche später, also am 11. Mai 2017, statt.**
-
 Unbedingt die [Mailingliste](http://mail.pm.org/pipermail/dresden-pm/) lesen, falls sich was ändert. Auch Abweichungen (z.B. Feiertage) werden dort verkündet.
 
 ## [<span aria-hidden="true" class="octicon octicon-link"></span>](#ort)Ort
