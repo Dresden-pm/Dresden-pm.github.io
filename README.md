@@ -35,7 +35,7 @@ The passphrase must be left empty!
 
 ### 2. Add public key to Github
 
-Go the Github repository settings -> Deploy keys and click "Add deploy key". Choose a meaningful title and paste the content of the file `dresdenpm_id_rsa.pub` into the key text field. Choose "Allow write access" and click "Add key".
+Go to the Github repository settings -> Deploy keys and click "Add deploy key". Choose a meaningful title and paste the content of the file `dresdenpm_id_rsa.pub` into the key text field. Choose "Allow write access" and click "Add key".
 
 ### 3. Add private key to Travis
 
@@ -80,3 +80,15 @@ The safest way would be three repositories:
 With this setup you could restrict access to the third repository only to the deploy key of the converter software. So the maintainers of the website source are not directly able to edit the converter workflow.
 
 The `.travis.yml` would only clone the converter repository and execute a shell script there that runs everything we currently define in the `.travis.yml` configuration file.
+
+## Use a static site generator instead of self-written converter
+
+[Qgoda](http://www.qgoda.net/en/) is a static-site generator written in Perl. It supports Markdown and uses Template Toolkit.
+
+## Remove dependency Sereal
+
+We used `Sereal` to reduce the output of `MIME::Base64` to one line. This is not necessary as `MIME::Base64` can be configured to output all in one line. Therefor you only have to add an empty string as second parameter to `encode_base64`.
+
+## Automatically remove old meeting dates
+
+After a meeting is over, the date could be automatically removed from the website. Also, the next date could also be automatically calculated and shown as estimated. Travis has the option of Cron Jobs which can be executed daily, so such cleanup jobs could be done there.
