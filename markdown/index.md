@@ -18,6 +18,8 @@ Wir treffen uns normalerweise jeden 1\. Donnerstag im Monat, 2o.oo Uhr.
 
 Bitte unbedingt die [Mailingliste](http://mail.pm.org/pipermail/dresden-pm/) lesen, falls sich was ändert. Auch Abweichungen (z.B. Feiertage) werden dort verkündet.
 
+Die nächsten Treffen werden auch auf unserer [Meetup-Seite](https://www.meetup.com/Dresden-Perl-Mongers/) veröffentlicht.
+
 ## [<span aria-hidden="true" class="octicon octicon-link"></span>](#ort)Ort
 
 *   Newtown Bar
