@@ -16,9 +16,7 @@ Ja, klar. Es ist egal, ob du schon Perl programmiert hast, ob du Windows- oder L
 
 Wir treffen uns normalerweise jeden 1\. Donnerstag im Monat, 2o.oo Uhr.
 
-Im September kommt [Damian Conway](http://damian.conway.org/) zu uns! Er hält seinen Vortrag [Fun With Dead Languages](http://damian.conway.org/Seminars/DeadLanguages.html) am Mittwoch, 12. September in den Räumen der itelligence, Fetscherplatz 32/34 in Dresden, 4. OG. Wir freuen uns auf zahlreiches Erscheinen!
-
-Bitte unbedingt die [Mailingliste](http://mail.pm.org/pipermail/dresden-pm/) lesen, falls sich was ändert. Auch Abweichungen (z.B. Feiertage) werden dort verkündet.
+Bitte lest unbedingt die [Mailingliste](http://mail.pm.org/pipermail/dresden-pm/), falls sich was ändert. Auch Abweichungen (z.B. Feiertage) werden dort verkündet.
 
 Die nächsten Treffen werden auch auf unserer [Meetup-Seite](https://www.meetup.com/Dresden-Perl-Mongers/) veröffentlicht.
 
