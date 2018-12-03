@@ -16,6 +16,8 @@ Ja, klar. Es ist egal, ob du schon Perl programmiert hast, ob du Windows- oder L
 
 Wir treffen uns normalerweise jeden 1\. Donnerstag im Monat, 2o.oo Uhr.
 
+Das nächste Treffen findet am **Donnerstag, 6. Dezember 2018** statt.
+
 Bitte lest unbedingt die [Mailingliste](http://mail.pm.org/pipermail/dresden-pm/), falls sich was ändert. Auch Abweichungen (z.B. Feiertage) werden dort verkündet.
 
 Die nächsten Treffen werden auch auf unserer [Meetup-Seite](https://www.meetup.com/Dresden-Perl-Mongers/) veröffentlicht.
